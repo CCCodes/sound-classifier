@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Audio Recorder</string>
+    <string name="recordStart">Start recording</string>
+    <string name="recordStop">Stop recording</string>
+    <string name="playStart">Start playing</string>
+    <string name="playStop">Stop playing</string>
+    <string name="saveAs">Save As</string>
+    <string name="pitch">Pitch: %f</string>
+    <string name="mfccText">MFCC</string>
+    <string name="dialog_message">%s not found in app cache folder</string>
+    <string name="dialog_title">No File Found</string>
+    <string name="streamText">Start Service</string>
+    <string name="results">Results will appear here</string>
+    <string name="statusRunning">running...</string>
+    <string name="finished">received results!</string>
+    <string name="addFile">Add</string>
+    <string name="emptyEntry">Blank Field</string>
+    <string name="enterValue">Please enter a file name.</string>
+</resources>

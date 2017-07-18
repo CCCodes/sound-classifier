@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/home/caitlinchou/.android/build-cache/07ec8705bcf41bc7296394043abb53cfdf50e94f/output/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_light.xml",
+        "source": "/home/caitlinchou/.android/build-cache/07ec8705bcf41bc7296394043abb53cfdf50e94f/output/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
+    }
+]
