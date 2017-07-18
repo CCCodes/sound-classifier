@@ -175,11 +175,11 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
 
         int sampleRate = 44100;
         int bufferSize = 1024;
-        int bufferOverlap = 128;
+        int bufferOverlap = 512;
         //final AudioDispatcher dispatcher = AudioDispatcherFactory.fromDefaultMicrophone(22050,1024,512);
         String path = mFileNameBase + "/" + mTextField.getSelectedItem().toString() + ".mp4";
         new AndroidFFMPEGLocator(this);
-        //final AudioDispatcher dispatcher = AudioDispatcherFactory.fromPipe(path, sampleRate, bufferSize, bufferOverlap);
+        //final AudioDispatcher dispatcher = AudioDispatcherFactory.fromPipe(path, sampleRate, samplesPerFrame, bufferOverlap);
         InputStream inStream;
 
         try {
@@ -205,8 +205,8 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
         }
 
 
-        AudioDispatcher dispatcher = new AudioDispatcher(new UniversalAudioInputStream(inStream, new TarsosDSPAudioFormat(sampleRate, bufferSize, 1, true, true)), bufferSize, bufferOverlap);
-        final MFCC mfcc = new MFCC(bufferSize, sampleRate, 40, 50, 300, 3000);
+        AudioDispatcher dispatcher = new AudioDispatcher(new UniversalAudioInputStream(inStream, new TarsosDSPAudioFormat(sampleRate, 16, 1, true, true)), bufferSize, bufferOverlap);
+        final MFCC mfcc = new MFCC(bufferSize, sampleRate, 13, 40, 300, 3000);
 
         try {
             dispatcher.addAudioProcessor(mfcc);
@@ -228,7 +228,7 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
             }
         });
         dispatcher.run();
-        //mfcc.process(new AudioEvent(new TarsosDSPAudioFormat(sampleRate, bufferSize, 1, true, true)));
+        //mfcc.process(new AudioEvent(new TarsosDSPAudioFormat(sampleRate, samplesPerFrame, 1, true, true)));
 
     }
 
