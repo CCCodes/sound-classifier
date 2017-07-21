@@ -217,13 +217,11 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
 
             @Override
             public void processingFinished() {
-                //float[] mfccArr = mfcc.getMFCC();
                 System.out.println("DONE");
             }
 
             @Override
             public boolean process(AudioEvent audioEvent) {
-
                 return true;
             }
         });
