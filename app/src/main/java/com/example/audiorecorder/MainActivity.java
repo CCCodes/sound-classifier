@@ -32,6 +32,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 import be.tarsos.dsp.AudioDispatcher;
 import be.tarsos.dsp.AudioEvent;
@@ -40,6 +43,13 @@ import be.tarsos.dsp.io.TarsosDSPAudioFormat;
 import be.tarsos.dsp.io.UniversalAudioInputStream;
 import be.tarsos.dsp.io.android.AndroidFFMPEGLocator;
 import be.tarsos.dsp.mfcc.MFCC;
+
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.math3.stat.descriptive.moment.Kurtosis;
+import org.apache.commons.math3.stat.descriptive.moment.Mean;
+import org.apache.commons.math3.stat.descriptive.moment.Skewness;
+import org.apache.commons.math3.stat.descriptive.moment.StandardDeviation;
+import org.apache.commons.math3.stat.descriptive.rank.Percentile;
 
 public class MainActivity extends AppCompatActivity implements ResponseReceiver.Receiver {
 
@@ -65,6 +75,9 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
     private ListView mListView = null;
     private ArrayAdapter<String> arrayAdapter = null;
     private ResponseReceiver mReceiver;
+
+    private List<float[]> all_mfccs = new ArrayList<>();
+    private MFCCData[] mfcc_stats = new MFCCData[12];
 
     // Requesting permission to RECORD_AUDIO
     private boolean permissionToRecordAccepted = false;
@@ -213,15 +226,30 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         dispatcher.addAudioProcessor(new AudioProcessor() {
+            int count_process = 0;
 
             @Override
             public void processingFinished() {
+                float[][] mfccs_by_num = new float[12][all_mfccs.size()];
+                for (int i = 0; i < all_mfccs.size(); i++) {
+                    for (int j = 0; j < 12; j++) {
+                        mfccs_by_num[j][i] = all_mfccs.get(i)[j];
+                    }
+                }
+                for (int i = 0; i < 12; i++) {
+                    mfcc_stats[i] = new MFCCData(mfccs_by_num[i]);
+                }
                 System.out.println("DONE");
             }
 
             @Override
             public boolean process(AudioEvent audioEvent) {
+                count_process++;
+                if (count_process > 1) {
+                    all_mfccs.add(mfcc.getMFCC());
+                }
                 return true;
             }
         });
@@ -252,6 +280,52 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
         mTextField.fileStrings.add(text);
         mTextField.setSelection(mTextField.adapter.getPosition(text));
         mNewFileField.setText("");
+    }
+
+    class MFCCData {
+        float max;
+        float min;
+        float range;
+        int maxPos;
+        int minPos;
+        double amean;
+        double stddev;
+        double skewness;
+        double kurtosis;
+        double quartile1;
+        double quartile2;
+        double quartile3;
+        double iqr1_2;
+        double iqr2_3;
+        double iqr1_3;
+
+        public double[] floatToDoubleArr(float[] arr) {
+            double[] result = new double[arr.length];
+            for (int i = 0; i < arr.length; i++) {
+                result[i] = arr[i];
+            }
+            return result;
+        }
+
+        public MFCCData(float[] mfcc) {
+            this.max = Collections.max(Arrays.asList(ArrayUtils.toObject(mfcc)));
+            this.min = Collections.min(Arrays.asList(ArrayUtils.toObject(mfcc)));
+            this.range = this.max - this.min;
+            this.maxPos = java.util.Arrays.asList(mfcc).indexOf(this.max);
+            this.minPos = java.util.Arrays.asList(mfcc).indexOf(this.min);
+
+            double[] mfcc_double = this.floatToDoubleArr(mfcc);
+            this.amean = (new Mean()).evaluate(mfcc_double);
+            this.stddev = (new StandardDeviation()).evaluate(mfcc_double);
+            this.skewness = (new Skewness()).evaluate(mfcc_double);
+            this.kurtosis = (new Kurtosis()).evaluate(mfcc_double);
+            this.quartile1 = (new Percentile(25)).evaluate(mfcc_double);
+            this.quartile2 = (new Percentile(50)).evaluate(mfcc_double);
+            this.quartile3 = (new Percentile(75)).evaluate(mfcc_double);
+            this.iqr1_2 = this.quartile2 - this.quartile1;
+            this.iqr2_3 = this.quartile3 - this.quartile2;
+            this.iqr1_3 = this.quartile3 - this.quartile1;
+        }
     }
 
     class RecordButton extends android.support.v7.widget.AppCompatButton {
