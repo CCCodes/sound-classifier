@@ -239,17 +239,14 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
                     }
                 }
                 for (int i = 0; i < 12; i++) {
-                    mfcc_stats[i] = new MFCCData(mfccs_by_num[i]);
+                    mfcc_stats[i] = new MFCCData(mfccs_by_num[i]);  // this is only for the first small window???
                 }
                 System.out.println("DONE");
             }
 
             @Override
             public boolean process(AudioEvent audioEvent) {
-                count_process++;
-                if (count_process > 1) {
-                    all_mfccs.add(mfcc.getMFCC());
-                }
+                all_mfccs.add(Arrays.copyOfRange(mfcc.getMFCC(), 1, 13));
                 return true;
             }
         });
@@ -350,8 +347,6 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
             setText(R.string.recordStart);
             setOnClickListener(clicker);
         }
-
-
     }
 
     class PlayButton extends android.support.v7.widget.AppCompatButton {

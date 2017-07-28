@@ -1,99 +1,99 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml:2:1-21:12
+ADDED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml:2:1-21:12
 	package
-		ADDED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml:3:5-40
-		INJECTED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml
-		INJECTED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml
+		ADDED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml:3:5-40
+		INJECTED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml
-		INJECTED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml:2:11-69
 	android:versionCode
-		INJECTED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml
-		INJECTED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml:4:5-81
+ADDED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml:4:5-81
 	android:name
-		ADDED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml:4:22-78
+		ADDED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml:4:22-78
 uses-permission#android.permission.RECORD_AUDIO
-ADDED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml:5:5-71
+ADDED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml:5:5-71
 	android:name
-		ADDED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml:5:22-68
+		ADDED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml:5:22-68
 application
-ADDED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml:6:5-20:19
-MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/07ec8705bcf41bc7296394043abb53cfdf50e94f/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-v4:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/f2e2a482685e4f752c2fd2ea783dfeb11eedefef/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/6153c8eb029392b378b7c75ed6b65bbffa54460d/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/77b9cf2c028e2cb1c6267d1a47f7ddf6184dd562/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/d697a8c70fa950b87d8f7f07c7b7b7d10abaa0b3/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/c894b5d0291bd52025bf4fdf1d5fa223d98a366c/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/d724163fe42d0680dd9f8b6a0a5debda5864d93b/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/3a58647135f85195fb793ef342844c793a7ba1ce/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-compat:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/64121dbca14a79e6df3ac141322c2240183cea5d/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/caitlinchou/.android/build-cache/5b76794765623a43c109578dbd1de6fafc916c7a/output/AndroidManifest.xml:9:5-20
+ADDED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml:6:5-20:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Caitlin\.android\build-cache\4b21d2c150f3ce63c11533c4f09d6a7189592b6f\output\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\b917d8852b15f05009d01c6efb97f9a4f5124f9c\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\cb94e1fb98357c5754732f5c10280f1d971c1459\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\5bcb198a2459a4529c6e9893184c52be396610f3\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\f5b3be50bfc78c801cdd98e058ae513f9fcb8c84\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\2b7d71546242ae83a0e3842acb00a588abfe5065\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\47835d287b69456d474055377d7922327944e7b9\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\117f3d1f0e284fb45a425879cd779da97ee9bd6f\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\25de408c3b90f5ee8855ee7e6d8b8a4e19b401c9\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\d4b30ff494f6d7e149a87e2c6462604535d5e18c\output\AndroidManifest.xml:29:5-20
 	android:label
-		ADDED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml:9:9-41
+		ADDED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml:9:9-41
 	android:supportsRtl
-		ADDED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml:11:9-35
+		ADDED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml:11:9-35
 	android:roundIcon
-		ADDED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml:10:9-54
+		ADDED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml:10:9-54
 	android:allowBackup
-		ADDED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml:7:9-35
+		ADDED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml:7:9-35
 	android:icon
-		ADDED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml:8:9-43
+		ADDED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml:8:9-43
 	android:theme
-		ADDED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml:12:9-40
+		ADDED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml:12:9-40
 activity#com.example.audiorecorder.MainActivity
-ADDED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml:13:9-18:20
+ADDED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml:13:9-18:20
 	android:name
-		ADDED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml:13:19-47
+		ADDED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml:13:19-47
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml:14:13-17:29
+ADDED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml:14:13-17:29
 action#android.intent.action.MAIN
-ADDED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml:15:17-69
+ADDED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml:15:17-69
 	android:name
-		ADDED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml:15:25-66
+		ADDED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml:15:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml:16:17-77
+ADDED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml:16:17-77
 	android:name
-		ADDED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml:16:27-74
+		ADDED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml:16:27-74
 service#com.example.audiorecorder.StreamService
-ADDED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml:19:9-50
+ADDED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml:19:9-50
 	android:name
-		ADDED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml:19:18-47
+		ADDED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml:19:18-47
 uses-sdk
-INJECTED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/07ec8705bcf41bc7296394043abb53cfdf50e94f/output/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:support-v4:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/f2e2a482685e4f752c2fd2ea783dfeb11eedefef/output/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/6153c8eb029392b378b7c75ed6b65bbffa54460d/output/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/77b9cf2c028e2cb1c6267d1a47f7ddf6184dd562/output/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/d697a8c70fa950b87d8f7f07c7b7b7d10abaa0b3/output/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/c894b5d0291bd52025bf4fdf1d5fa223d98a366c/output/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/d724163fe42d0680dd9f8b6a0a5debda5864d93b/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/3a58647135f85195fb793ef342844c793a7ba1ce/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/64121dbca14a79e6df3ac141322c2240183cea5d/output/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/caitlinchou/.android/build-cache/5b76794765623a43c109578dbd1de6fafc916c7a/output/AndroidManifest.xml:5:5-7:41
+INJECTED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Caitlin\.android\build-cache\4b21d2c150f3ce63c11533c4f09d6a7189592b6f\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\b917d8852b15f05009d01c6efb97f9a4f5124f9c\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\cb94e1fb98357c5754732f5c10280f1d971c1459\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\5bcb198a2459a4529c6e9893184c52be396610f3\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\f5b3be50bfc78c801cdd98e058ae513f9fcb8c84\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\2b7d71546242ae83a0e3842acb00a588abfe5065\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\47835d287b69456d474055377d7922327944e7b9\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\117f3d1f0e284fb45a425879cd779da97ee9bd6f\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\25de408c3b90f5ee8855ee7e6d8b8a4e19b401c9\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\d4b30ff494f6d7e149a87e2c6462604535d5e18c\output\AndroidManifest.xml:21:5-23:58
 	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/07ec8705bcf41bc7296394043abb53cfdf50e94f/output/AndroidManifest.xml:23:9-75
+		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\b917d8852b15f05009d01c6efb97f9a4f5124f9c\output\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
-		INJECTED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml
-		INJECTED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml
-		INJECTED from /home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Caitlin\StudioProjects\sound-classifier\app\src\main\AndroidManifest.xml
 meta-data#android.support.VERSION
-ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/07ec8705bcf41bc7296394043abb53cfdf50e94f/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-v4:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/f2e2a482685e4f752c2fd2ea783dfeb11eedefef/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/6153c8eb029392b378b7c75ed6b65bbffa54460d/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/77b9cf2c028e2cb1c6267d1a47f7ddf6184dd562/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/d697a8c70fa950b87d8f7f07c7b7b7d10abaa0b3/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/c894b5d0291bd52025bf4fdf1d5fa223d98a366c/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/d724163fe42d0680dd9f8b6a0a5debda5864d93b/output/AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/3a58647135f85195fb793ef342844c793a7ba1ce/output/AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:support-compat:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/64121dbca14a79e6df3ac141322c2240183cea5d/output/AndroidManifest.xml:25:5-27:41
+ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\b917d8852b15f05009d01c6efb97f9a4f5124f9c\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\cb94e1fb98357c5754732f5c10280f1d971c1459\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\5bcb198a2459a4529c6e9893184c52be396610f3\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\f5b3be50bfc78c801cdd98e058ae513f9fcb8c84\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\2b7d71546242ae83a0e3842acb00a588abfe5065\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\47835d287b69456d474055377d7922327944e7b9\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\117f3d1f0e284fb45a425879cd779da97ee9bd6f\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\25de408c3b90f5ee8855ee7e6d8b8a4e19b401c9\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\d4b30ff494f6d7e149a87e2c6462604535d5e18c\output\AndroidManifest.xml:25:5-27:41
 	android:value
-		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/07ec8705bcf41bc7296394043abb53cfdf50e94f/output/AndroidManifest.xml:27:9-38
+		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\b917d8852b15f05009d01c6efb97f9a4f5124f9c\output\AndroidManifest.xml:27:9-38
 	android:name
-		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] /home/caitlinchou/.android/build-cache/07ec8705bcf41bc7296394043abb53cfdf50e94f/output/AndroidManifest.xml:26:9-47
+		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Caitlin\.android\build-cache\b917d8852b15f05009d01c6efb97f9a4f5124f9c\output\AndroidManifest.xml:26:9-47

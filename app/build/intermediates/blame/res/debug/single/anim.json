@@ -1,42 +1,82 @@
 [
     {
-        "merged": "/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
-        "source": "/home/caitlinchou/.android/build-cache/07ec8705bcf41bc7296394043abb53cfdf50e94f/output/res/anim/abc_shrink_fade_out_from_bottom.xml"
+        "merged": "C:\\home\\caitlinchou\\AndroidStudioProjects\\AudioRecorder\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\home\\caitlinchou\\.android\\build-cache\\07ec8705bcf41bc7296394043abb53cfdf50e94f\\output\\res\\anim\\abc_slide_out_top.xml"
     },
     {
-        "merged": "/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/merged/debug/anim/abc_fade_out.xml",
-        "source": "/home/caitlinchou/.android/build-cache/07ec8705bcf41bc7296394043abb53cfdf50e94f/output/res/anim/abc_fade_out.xml"
+        "merged": "C:\\Users\\Caitlin\\StudioProjects\\sound-classifier\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\Caitlin\\.android\\build-cache\\b917d8852b15f05009d01c6efb97f9a4f5124f9c\\output\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
-        "merged": "/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",
-        "source": "/home/caitlinchou/.android/build-cache/07ec8705bcf41bc7296394043abb53cfdf50e94f/output/res/anim/abc_popup_exit.xml"
+        "merged": "C:\\home\\caitlinchou\\AndroidStudioProjects\\AudioRecorder\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\home\\caitlinchou\\.android\\build-cache\\07ec8705bcf41bc7296394043abb53cfdf50e94f\\output\\res\\anim\\abc_popup_enter.xml"
     },
     {
-        "merged": "/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml",
-        "source": "/home/caitlinchou/.android/build-cache/07ec8705bcf41bc7296394043abb53cfdf50e94f/output/res/anim/abc_slide_out_top.xml"
+        "merged": "C:\\home\\caitlinchou\\AndroidStudioProjects\\AudioRecorder\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\home\\caitlinchou\\.android\\build-cache\\07ec8705bcf41bc7296394043abb53cfdf50e94f\\output\\res\\anim\\abc_fade_out.xml"
     },
     {
-        "merged": "/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
-        "source": "/home/caitlinchou/.android/build-cache/07ec8705bcf41bc7296394043abb53cfdf50e94f/output/res/anim/abc_fade_in.xml"
+        "merged": "C:\\Users\\Caitlin\\StudioProjects\\sound-classifier\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\Caitlin\\.android\\build-cache\\b917d8852b15f05009d01c6efb97f9a4f5124f9c\\output\\res\\anim\\abc_popup_exit.xml"
     },
     {
-        "merged": "/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/merged/debug/anim/abc_slide_in_bottom.xml",
-        "source": "/home/caitlinchou/.android/build-cache/07ec8705bcf41bc7296394043abb53cfdf50e94f/output/res/anim/abc_slide_in_bottom.xml"
+        "merged": "C:\\Users\\Caitlin\\StudioProjects\\sound-classifier\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\Caitlin\\.android\\build-cache\\b917d8852b15f05009d01c6efb97f9a4f5124f9c\\output\\res\\anim\\abc_slide_in_top.xml"
     },
     {
-        "merged": "/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
-        "source": "/home/caitlinchou/.android/build-cache/07ec8705bcf41bc7296394043abb53cfdf50e94f/output/res/anim/abc_popup_enter.xml"
+        "merged": "C:\\home\\caitlinchou\\AndroidStudioProjects\\AudioRecorder\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\home\\caitlinchou\\.android\\build-cache\\07ec8705bcf41bc7296394043abb53cfdf50e94f\\output\\res\\anim\\abc_slide_in_top.xml"
     },
     {
-        "merged": "/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/merged/debug/anim/abc_slide_in_top.xml",
-        "source": "/home/caitlinchou/.android/build-cache/07ec8705bcf41bc7296394043abb53cfdf50e94f/output/res/anim/abc_slide_in_top.xml"
+        "merged": "C:\\Users\\Caitlin\\StudioProjects\\sound-classifier\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\Caitlin\\.android\\build-cache\\b917d8852b15f05009d01c6efb97f9a4f5124f9c\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
-        "merged": "/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/merged/debug/anim/abc_slide_out_bottom.xml",
-        "source": "/home/caitlinchou/.android/build-cache/07ec8705bcf41bc7296394043abb53cfdf50e94f/output/res/anim/abc_slide_out_bottom.xml"
+        "merged": "C:\\Users\\Caitlin\\StudioProjects\\sound-classifier\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\Caitlin\\.android\\build-cache\\b917d8852b15f05009d01c6efb97f9a4f5124f9c\\output\\res\\anim\\abc_fade_out.xml"
     },
     {
-        "merged": "/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
-        "source": "/home/caitlinchou/.android/build-cache/07ec8705bcf41bc7296394043abb53cfdf50e94f/output/res/anim/abc_grow_fade_in_from_bottom.xml"
+        "merged": "C:\\Users\\Caitlin\\StudioProjects\\sound-classifier\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\Caitlin\\.android\\build-cache\\b917d8852b15f05009d01c6efb97f9a4f5124f9c\\output\\res\\anim\\abc_popup_enter.xml"
+    },
+    {
+        "merged": "C:\\home\\caitlinchou\\AndroidStudioProjects\\AudioRecorder\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\home\\caitlinchou\\.android\\build-cache\\07ec8705bcf41bc7296394043abb53cfdf50e94f\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "C:\\home\\caitlinchou\\AndroidStudioProjects\\AudioRecorder\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\home\\caitlinchou\\.android\\build-cache\\07ec8705bcf41bc7296394043abb53cfdf50e94f\\output\\res\\anim\\abc_popup_exit.xml"
+    },
+    {
+        "merged": "C:\\Users\\Caitlin\\StudioProjects\\sound-classifier\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\Caitlin\\.android\\build-cache\\b917d8852b15f05009d01c6efb97f9a4f5124f9c\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Caitlin\\StudioProjects\\sound-classifier\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\Caitlin\\.android\\build-cache\\b917d8852b15f05009d01c6efb97f9a4f5124f9c\\output\\res\\anim\\abc_fade_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\Caitlin\\StudioProjects\\sound-classifier\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\Caitlin\\.android\\build-cache\\b917d8852b15f05009d01c6efb97f9a4f5124f9c\\output\\res\\anim\\abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "C:\\home\\caitlinchou\\AndroidStudioProjects\\AudioRecorder\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\home\\caitlinchou\\.android\\build-cache\\07ec8705bcf41bc7296394043abb53cfdf50e94f\\output\\res\\anim\\abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "C:\\home\\caitlinchou\\AndroidStudioProjects\\AudioRecorder\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\home\\caitlinchou\\.android\\build-cache\\07ec8705bcf41bc7296394043abb53cfdf50e94f\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "C:\\home\\caitlinchou\\AndroidStudioProjects\\AudioRecorder\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\home\\caitlinchou\\.android\\build-cache\\07ec8705bcf41bc7296394043abb53cfdf50e94f\\output\\res\\anim\\abc_fade_in.xml"
+    },
+    {
+        "merged": "C:\\home\\caitlinchou\\AndroidStudioProjects\\AudioRecorder\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\home\\caitlinchou\\.android\\build-cache\\07ec8705bcf41bc7296394043abb53cfdf50e94f\\output\\res\\anim\\abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Caitlin\\StudioProjects\\sound-classifier\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\Caitlin\\.android\\build-cache\\b917d8852b15f05009d01c6efb97f9a4f5124f9c\\output\\res\\anim\\abc_slide_out_top.xml"
     }
 ]

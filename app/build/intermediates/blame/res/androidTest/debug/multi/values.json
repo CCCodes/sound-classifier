@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+        "outputFile": "C:\\home\\caitlinchou\\AndroidStudioProjects\\AudioRecorder\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,31 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "/home/caitlinchou/.android/build-cache/ff2893c6f830fafff799e56688d03a2eaf4e5fb4/output/res/values/values.xml",
+                    "file": "C:\\home\\caitlinchou\\.android\\build-cache\\ff2893c6f830fafff799e56688d03a2eaf4e5fb4\\output\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 229,
+                        "endColumn": 45,
+                        "endOffset": 270
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\Caitlin\\StudioProjects\\sound-classifier\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 45,
+                    "endOffset": 96
+                },
+                "from": {
+                    "file": "C:\\Users\\Caitlin\\.android\\build-cache\\edc88095cac11bf9dd78248b843d1bc342a64992\\output\\res\\values\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

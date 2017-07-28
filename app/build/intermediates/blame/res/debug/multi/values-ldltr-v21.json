@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml",
+        "outputFile": "C:\\home\\caitlinchou\\AndroidStudioProjects\\AudioRecorder\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ldltr-v21\\values-ldltr-v21.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,31 @@
                     "endOffset": 163
                 },
                 "from": {
-                    "file": "/home/caitlinchou/.android/build-cache/07ec8705bcf41bc7296394043abb53cfdf50e94f/output/res/values-ldltr-v21/values-ldltr-v21.xml",
+                    "file": "C:\\home\\caitlinchou\\.android\\build-cache\\07ec8705bcf41bc7296394043abb53cfdf50e94f\\output\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 112,
+                        "endOffset": 163
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\Caitlin\\StudioProjects\\sound-classifier\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ldltr-v21\\values-ldltr-v21.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 112,
+                    "endOffset": 163
+                },
+                "from": {
+                    "file": "C:\\Users\\Caitlin\\.android\\build-cache\\b917d8852b15f05009d01c6efb97f9a4f5124f9c\\output\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

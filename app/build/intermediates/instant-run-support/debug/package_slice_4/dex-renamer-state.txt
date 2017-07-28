@@ -1,4 +1,4 @@
-#Fri Jun 30 15:06:14 EDT 2017
-base.0=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4
+#Fri Jul 28 11:54:32 EDT 2017
+base.0=C\:\\Users\\Caitlin\\StudioProjects\\sound-classifier\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_4
 renamed.0=classes.dex
-file.0=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex
+file.0=C\:\\Users\\Caitlin\\StudioProjects\\sound-classifier\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_4\\classes.dex
