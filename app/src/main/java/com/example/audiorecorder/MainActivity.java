@@ -27,10 +27,16 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -121,22 +127,7 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
         }
 
         if (! (new File(mFileName)).exists()) {
-            AlertDialog.Builder builder;
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                builder = new AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog_Alert);
-            } else {
-                builder = new AlertDialog.Builder(this);
-            }
-            builder.setTitle(R.string.dialog_title)
-                    .setMessage(String.format(getString(R.string.dialog_message), (mTextField.getSelectedItem().toString() + ".mp4")))
-                    .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            mRecordButton.setEnabled(true);
-                            mPlayButton.setText(R.string.playStart);
-                        }
-                    })
-                    .setIcon(android.R.drawable.ic_dialog_alert)
-                    .show();
+            fileNotFoundMessage(mTextField.getSelectedItem().toString() + ".mp4");
             return;
         }
 
@@ -190,69 +181,125 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
         int bufferSize = 1024;
         int bufferOverlap = 512;
         //final AudioDispatcher dispatcher = AudioDispatcherFactory.fromDefaultMicrophone(22050,1024,512);
-        String path = mFileNameBase + "/" + mTextField.getSelectedItem().toString() + ".mp4";
+        //String path = mFileNameBase + "/" + mTextField.getSelectedItem().toString() + ".mp4";
+
+        String path = mFileNameBase + "/barks/";
+        File bark_dir = new File(path);
+
         new AndroidFFMPEGLocator(this);
-        //final AudioDispatcher dispatcher = AudioDispatcherFactory.fromPipe(path, sampleRate, samplesPerFrame, bufferOverlap);
-        InputStream inStream;
 
-        try {
-            inStream = new FileInputStream(path);
-        } catch (java.io.IOException e) {
-            AlertDialog.Builder builder;
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                builder = new AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog_Alert);
-            } else {
-                builder = new AlertDialog.Builder(this);
+        writeToFile(readFromFile(MainActivity.this, "assimilated_arff_base.txt"), MainActivity.this, mFileNameBase+"/output.arff");
+
+        for (File f : bark_dir.listFiles()) {
+            InputStream inStream;
+
+            try {
+                inStream = new FileInputStream(f);
+            } catch (java.io.IOException e) {
+                fileNotFoundMessage(mTextField.getSelectedItem().toString() + ".mp4");
+                return;
             }
-            builder.setTitle(R.string.dialog_title)
-                    .setMessage(String.format(getString(R.string.dialog_message), (mTextField.getSelectedItem().toString() + ".mp4")))
-                    .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            mRecordButton.setEnabled(true);
-                            mPlayButton.setText(R.string.playStart);
+            AudioDispatcher dispatcher = new AudioDispatcher(new UniversalAudioInputStream(inStream, new TarsosDSPAudioFormat(sampleRate, 16, 1, true, true)), bufferSize, bufferOverlap);
+            final MFCC mfcc = new MFCC(bufferSize, sampleRate, 13, 40, 300, 3000);
+
+            try {
+                dispatcher.addAudioProcessor(mfcc);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            dispatcher.addAudioProcessor(new AudioProcessor() {
+                int count_process = 0;
+
+                @Override
+                public void processingFinished() {
+                    float[][] mfccs_by_num = new float[12][all_mfccs.size()];
+                    for (int i = 0; i < all_mfccs.size(); i++) {
+                        for (int j = 0; j < 12; j++) {
+                            mfccs_by_num[j][i] = all_mfccs.get(i)[j];
                         }
-                    })
-                    .setIcon(android.R.drawable.ic_dialog_alert)
-                    .show();
-            return;
+                    }
+                    for (int i = 0; i < 12; i++) {
+                        mfcc_stats[i] = new MFCCData(mfccs_by_num[i]);
+                    }
+
+
+                    System.out.println("DONE");
+                }
+
+                @Override
+                public boolean process(AudioEvent audioEvent) {
+                    all_mfccs.add(Arrays.copyOfRange(mfcc.getMFCC(), 1, 13));
+                    return true;
+                }
+            });
+            dispatcher.run();
+            //mfcc.process(new AudioEvent(new TarsosDSPAudioFormat(sampleRate, samplesPerFrame, 1, true, true)));
         }
 
 
-        AudioDispatcher dispatcher = new AudioDispatcher(new UniversalAudioInputStream(inStream, new TarsosDSPAudioFormat(sampleRate, 16, 1, true, true)), bufferSize, bufferOverlap);
-        final MFCC mfcc = new MFCC(bufferSize, sampleRate, 13, 40, 300, 3000);
+
+    }
+
+    private String readFromFile(Context context, String path) {
+
+        String ret = "";
 
         try {
-            dispatcher.addAudioProcessor(mfcc);
-        } catch (Exception e) {
-            e.printStackTrace();
+            InputStream inputStream = context.getAssets().open(path);
+
+            if ( inputStream != null ) {
+                InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+                String receiveString = "";
+                StringBuilder stringBuilder = new StringBuilder();
+
+                while ( (receiveString = bufferedReader.readLine()) != null ) {
+                    stringBuilder.append(receiveString);
+                }
+
+                inputStream.close();
+                ret = stringBuilder.toString();
+            }
+        }
+        catch (FileNotFoundException e) {
+            Log.e("login activity", "File not found: " + e.toString());
+        } catch (IOException e) {
+            Log.e("login activity", "Can not read file: " + e.toString());
         }
 
-        dispatcher.addAudioProcessor(new AudioProcessor() {
-            int count_process = 0;
+        return ret;
+    }
 
-            @Override
-            public void processingFinished() {
-                float[][] mfccs_by_num = new float[12][all_mfccs.size()];
-                for (int i = 0; i < all_mfccs.size(); i++) {
-                    for (int j = 0; j < 12; j++) {
-                        mfccs_by_num[j][i] = all_mfccs.get(i)[j];
+    private void writeToFile(String data, Context context, String path) {
+        try {
+            OutputStream outputStream = new FileOutputStream(path);
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
+            outputStreamWriter.write(data);
+            outputStreamWriter.close();
+        }
+        catch (IOException e) {
+            Log.e("Exception", "File write failed: " + e.toString());
+        }
+    }
+
+    private void fileNotFoundMessage(String path) {
+        AlertDialog.Builder builder;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            builder = new AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog_Alert);
+        } else {
+            builder = new AlertDialog.Builder(this);
+        }
+        builder.setTitle(R.string.dialog_title)
+                .setMessage(String.format(getString(R.string.dialog_message), (path)))
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        mRecordButton.setEnabled(true);
+                        mPlayButton.setText(R.string.playStart);
                     }
-                }
-                for (int i = 0; i < 12; i++) {
-                    mfcc_stats[i] = new MFCCData(mfccs_by_num[i]);  // this is only for the first small window???
-                }
-                System.out.println("DONE");
-            }
-
-            @Override
-            public boolean process(AudioEvent audioEvent) {
-                all_mfccs.add(Arrays.copyOfRange(mfcc.getMFCC(), 1, 13));
-                return true;
-            }
-        });
-        dispatcher.run();
-        //mfcc.process(new AudioEvent(new TarsosDSPAudioFormat(sampleRate, samplesPerFrame, 1, true, true)));
-
+                })
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
     }
 
     private void addFileAndRecord() {
@@ -486,7 +533,7 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
         super.onCreate(icicle);
 
         // Record to the external cache directory for visibility
-        //storage/emulated/0/Android/data/com.example.audiorecorder/cache/audiorecordtest.3gp
+        //storage/emulated/0/Android/data/com.example.audiorecorder/cache/
         mFileNameBase = getExternalCacheDir().getAbsolutePath();
 
         ActivityCompat.requestPermissions(this, permissions, REQUEST_RECORD_AUDIO_PERMISSION);

@@ -1,18 +1,26 @@
 [
     {
-        "merged": "C:\\Users\\Caitlin\\StudioProjects\\sound-classifier\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher_round.png",
-        "source": "C:\\Users\\Caitlin\\StudioProjects\\sound-classifier\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+        "merged": "/home/caitlinchou/AndroidStudioProjects/AudioRecorder/C:\\Users\\Caitlin\\StudioProjects\\sound-classifier\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher_round.png",
+        "source": "/home/caitlinchou/AndroidStudioProjects/AudioRecorder/C:\\Users\\Caitlin\\StudioProjects\\sound-classifier\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\home\\caitlinchou\\AndroidStudioProjects\\AudioRecorder\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
-        "source": "C:\\home\\caitlinchou\\AndroidStudioProjects\\AudioRecorder\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher.png",
+        "source": "/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "C:\\home\\caitlinchou\\AndroidStudioProjects\\AudioRecorder\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher_round.png",
-        "source": "C:\\home\\caitlinchou\\AndroidStudioProjects\\AudioRecorder\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+        "merged": "/home/caitlinchou/AndroidStudioProjects/AudioRecorder/C:\\home\\caitlinchou\\AndroidStudioProjects\\AudioRecorder\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher_round.png",
+        "source": "/home/caitlinchou/AndroidStudioProjects/AudioRecorder/C:\\home\\caitlinchou\\AndroidStudioProjects\\AudioRecorder\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\Caitlin\\StudioProjects\\sound-classifier\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
-        "source": "C:\\Users\\Caitlin\\StudioProjects\\sound-classifier\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "/home/caitlinchou/AndroidStudioProjects/AudioRecorder/C:\\home\\caitlinchou\\AndroidStudioProjects\\AudioRecorder\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
+        "source": "/home/caitlinchou/AndroidStudioProjects/AudioRecorder/C:\\home\\caitlinchou\\AndroidStudioProjects\\AudioRecorder\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "/home/caitlinchou/AndroidStudioProjects/AudioRecorder/C:\\Users\\Caitlin\\StudioProjects\\sound-classifier\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
+        "source": "/home/caitlinchou/AndroidStudioProjects/AudioRecorder/C:\\Users\\Caitlin\\StudioProjects\\sound-classifier\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher_round.png",
+        "source": "/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
     }
 ]
