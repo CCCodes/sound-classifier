@@ -18,6 +18,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.text.InputType;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -84,6 +85,9 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
 
     private List<float[]> all_mfccs = new ArrayList<>();
     private MFCCData[] mfcc_stats = new MFCCData[12];
+
+    private OutputStream outputStream = null;
+    private OutputStreamWriter outputStreamWriter = null;
 
     // Requesting permission to RECORD_AUDIO
     private boolean permissionToRecordAccepted = false;
@@ -184,60 +188,101 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
         //String path = mFileNameBase + "/" + mTextField.getSelectedItem().toString() + ".mp4";
 
         String path = mFileNameBase + "/barks/";
-        File bark_dir = new File(path);
+        File barkDir = new File(path);
+        File[] barkDirFiles = barkDir.listFiles();
 
         new AndroidFFMPEGLocator(this);
 
-        writeToFile(readFromFile(MainActivity.this, "assimilated_arff_base.txt"), MainActivity.this, mFileNameBase+"/output.arff");
+        final String[] dirPaths = new String[barkDirFiles.length];
 
-        for (File f : bark_dir.listFiles()) {
-            InputStream inStream;
-
-            try {
-                inStream = new FileInputStream(f);
-            } catch (java.io.IOException e) {
-                fileNotFoundMessage(mTextField.getSelectedItem().toString() + ".mp4");
-                return;
-            }
-            AudioDispatcher dispatcher = new AudioDispatcher(new UniversalAudioInputStream(inStream, new TarsosDSPAudioFormat(sampleRate, 16, 1, true, true)), bufferSize, bufferOverlap);
-            final MFCC mfcc = new MFCC(bufferSize, sampleRate, 13, 40, 300, 3000);
-
-            try {
-                dispatcher.addAudioProcessor(mfcc);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            dispatcher.addAudioProcessor(new AudioProcessor() {
-                int count_process = 0;
-
-                @Override
-                public void processingFinished() {
-                    float[][] mfccs_by_num = new float[12][all_mfccs.size()];
-                    for (int i = 0; i < all_mfccs.size(); i++) {
-                        for (int j = 0; j < 12; j++) {
-                            mfccs_by_num[j][i] = all_mfccs.get(i)[j];
-                        }
-                    }
-                    for (int i = 0; i < 12; i++) {
-                        mfcc_stats[i] = new MFCCData(mfccs_by_num[i]);
-                    }
-
-
-                    System.out.println("DONE");
-                }
-
-                @Override
-                public boolean process(AudioEvent audioEvent) {
-                    all_mfccs.add(Arrays.copyOfRange(mfcc.getMFCC(), 1, 13));
-                    return true;
-                }
-            });
-            dispatcher.run();
-            //mfcc.process(new AudioEvent(new TarsosDSPAudioFormat(sampleRate, samplesPerFrame, 1, true, true)));
+        for (int i = 0; i < barkDirFiles.length; i++) {
+            String filePath = barkDirFiles[i].toString();
+            dirPaths[i] = filePath.substring(filePath.lastIndexOf("/") + 1, filePath.length() - 6);
         }
 
+        try {
+            outputStream = new FileOutputStream(mFileNameBase+"/output.arff");
+        } catch (IOException e) {
+            Log.e("Exception", "File write failed: " + e.toString());
+        }
+        outputStreamWriter = new OutputStreamWriter(outputStream);
 
+        try {
+            String classes = TextUtils.join(", ", dirPaths);
+
+            outputStreamWriter.write(readFromFile(MainActivity.this, "assimilated_arff_base.txt")+classes+"}\n@data\n");
+        } catch (IOException e) {
+            Log.e("Exception", "File write failed: " + e.toString());
+        }
+
+        for (int i = 0 ; i < barkDirFiles.length; i++) {
+            final int j = i;
+
+            for (File f : barkDirFiles[i].listFiles()) {
+                InputStream inStream;
+
+                try {
+                    inStream = new FileInputStream(f);
+                } catch (java.io.IOException e) {
+                    fileNotFoundMessage(mTextField.getSelectedItem().toString() + ".mp4");
+                    return;
+                }
+                AudioDispatcher dispatcher = new AudioDispatcher(new UniversalAudioInputStream(inStream,
+                        new TarsosDSPAudioFormat(sampleRate, 16, 1, true, true)), bufferSize, bufferOverlap);
+                final MFCC mfcc = new MFCC(bufferSize, sampleRate, 13, 40, 300, 3000);
+
+                try {
+                    dispatcher.addAudioProcessor(mfcc);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                dispatcher.addAudioProcessor(new AudioProcessor() {
+
+                    @Override
+                    public void processingFinished() {
+                        float[][] mfccs_by_num = new float[12][all_mfccs.size()];
+                        for (int i = 0; i < all_mfccs.size(); i++) {
+                            for (int j = 0; j < 12; j++) {
+                                mfccs_by_num[j][i] = all_mfccs.get(i)[j];
+                            }
+                        }
+                        // write to file here
+                        for (int i = 0; i < 12; i++) {
+                            mfcc_stats[i] = new MFCCData(mfccs_by_num[i]);
+                        }
+                        List<String> mfcc_instance = new ArrayList<>();
+                        for (MFCCData data : mfcc_stats) {
+                            mfcc_instance.add(data.toString());
+                        }
+
+                        String[] mfcc_instance_arr = new String[mfcc_instance.size()];
+                        mfcc_instance_arr = mfcc_instance.toArray(mfcc_instance_arr);
+                        try {
+                            outputStreamWriter.write(TextUtils.join(",", mfcc_instance_arr) + "," + dirPaths[j] +"\n");
+                        } catch (IOException e) {
+                            Log.e("Exception", "File write failed: " + e.toString());
+                        }
+                        System.out.println("DONE");
+                    }
+
+                    @Override
+                    public boolean process(AudioEvent audioEvent) {
+                        all_mfccs.add(Arrays.copyOfRange(mfcc.getMFCC(), 1, 13));
+                        return true;
+                    }
+                });
+                //mfcc.process(new AudioEvent(new TarsosDSPAudioFormat(sampleRate, samplesPerFrame, 1, true, true)));
+                dispatcher.run();
+            }
+
+        }
+
+        try {
+            outputStreamWriter.close();
+        } catch (IOException e) {
+            Log.e("Exception", "File write failed: " + e.toString());
+        }
 
     }
 
@@ -256,6 +301,10 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
 
                 while ( (receiveString = bufferedReader.readLine()) != null ) {
                     stringBuilder.append(receiveString);
+
+                    if (! receiveString.endsWith("{")) {
+                        stringBuilder.append("\n");
+                    }
                 }
 
                 inputStream.close();
@@ -271,7 +320,7 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
         return ret;
     }
 
-    private void writeToFile(String data, Context context, String path) {
+    private void writeToFile(String data, Context context, String path, Boolean append) {
         try {
             OutputStream outputStream = new FileOutputStream(path);
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
@@ -343,7 +392,7 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
         double iqr2_3;
         double iqr1_3;
 
-        public double[] floatToDoubleArr(float[] arr) {
+        double[] floatToDoubleArr(float[] arr) {
             double[] result = new double[arr.length];
             for (int i = 0; i < arr.length; i++) {
                 result[i] = arr[i];
@@ -351,12 +400,22 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
             return result;
         }
 
+        int indexOf(float[] arr, float el) {
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] == el) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
         public MFCCData(float[] mfcc) {
             this.max = Collections.max(Arrays.asList(ArrayUtils.toObject(mfcc)));
             this.min = Collections.min(Arrays.asList(ArrayUtils.toObject(mfcc)));
             this.range = this.max - this.min;
-            this.maxPos = java.util.Arrays.asList(mfcc).indexOf(this.max);
-            this.minPos = java.util.Arrays.asList(mfcc).indexOf(this.min);
+
+            this.maxPos = indexOf(mfcc, this.max);
+            this.minPos = indexOf(mfcc, this.min);
 
             double[] mfcc_double = this.floatToDoubleArr(mfcc);
             this.amean = (new Mean()).evaluate(mfcc_double);
@@ -369,6 +428,26 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
             this.iqr1_2 = this.quartile2 - this.quartile1;
             this.iqr2_3 = this.quartile3 - this.quartile2;
             this.iqr1_3 = this.quartile3 - this.quartile1;
+        }
+
+        public String toString() {
+            List<String> fields = new ArrayList<>();
+            fields.add(String.valueOf(this.max));
+            fields.add(String.valueOf(this.min));
+            fields.add(String.valueOf(this.range));
+            fields.add(String.valueOf(this.maxPos));
+            fields.add(String.valueOf(this.minPos));
+            fields.add(String.valueOf(this.amean));
+            fields.add(String.valueOf(this.stddev));
+            fields.add(String.valueOf(this.skewness));
+            fields.add(String.valueOf(this.kurtosis));
+            fields.add(String.valueOf(this.quartile1));
+            fields.add(String.valueOf(this.quartile2));
+            fields.add(String.valueOf(this.quartile3));
+            fields.add(String.valueOf(this.iqr1_2));
+            fields.add(String.valueOf(this.iqr2_3));
+            fields.add(String.valueOf(this.iqr1_3));
+            return TextUtils.join(",", fields);
         }
     }
 

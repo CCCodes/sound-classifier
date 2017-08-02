@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">Audio Recorder</string>
     <string name="recordStart">Start recording</string>
     <string name="recordStop">Stop recording</string>
     <string name="playStart">Start playing</string>
@@ -16,4 +15,5 @@
     <string name="addFile">Add</string>
     <string name="emptyEntry">Blank Field</string>
     <string name="enterValue">Please enter a file name.</string>
+    <string name="app_name">Sound Identifier</string>
 </resources>

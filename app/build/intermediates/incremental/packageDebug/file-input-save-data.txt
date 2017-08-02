@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Jul 31 15:03:19 EDT 2017
+#Mon Jul 31 18:10:00 EDT 2017
 210.set=ANDROID_RESOURCE
 14.set=ANDROID_RESOURCE
 180.file=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_/res/drawable/abc_ic_go_search_api_material.xml
@@ -62,7 +62,7 @@
 6.base=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_
 5.set=ANDROID_RESOURCE
 179.file=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_/res/layout/abc_screen_simple_overlay_action_mode.xml
-102.file=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_/res/layout-v17/notification_action.xml
+102.file=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_/res/layout/abc_search_dropdown_item_icons_2line.xml
 231.file=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_/res/drawable-xxhdpi-v4/abc_ic_star_black_16dp.png
 154.file=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_/res/color/abc_tint_edittext.xml
 167.set=ANDROID_RESOURCE
@@ -83,7 +83,7 @@
 187.base=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_
 110.base=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_
 162.base=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_
-193.file=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_/res/layout/notification_template_custom_big.xml
+193.file=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_/res/color/abc_primary_text_material_dark.xml
 142.set=ANDROID_RESOURCE
 189.set=ANDROID_RESOURCE
 35.base=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_
@@ -123,7 +123,7 @@
 128.file=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_/res/color-v23/abc_tint_btn_checkable.xml
 73.set=ANDROID_RESOURCE
 7.base=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/assets/debug
-103.file=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_/res/layout/abc_search_dropdown_item_icons_2line.xml
+103.file=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_/res/layout-v17/notification_action.xml
 232.file=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_/res/drawable/abc_btn_borderless_material.xml
 155.file=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_/res/layout/abc_select_dialog_material.xml
 230.set=ANDROID_RESOURCE
@@ -146,7 +146,7 @@
 111.base=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_
 163.base=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_
 106.set=ANDROID_RESOURCE
-194.file=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_/res/color/abc_primary_text_material_dark.xml
+194.file=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_/res/layout/notification_template_custom_big.xml
 190.base=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_
 152.set=ANDROID_RESOURCE
 199.set=ANDROID_RESOURCE
@@ -290,7 +290,7 @@
 100.base=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_
 140.set=ANDROID_RESOURCE
 187.set=ANDROID_RESOURCE
-4.file=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_/res/color/abc_tint_seek_thumb.xml
+4.file=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_/res/drawable-xxhdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png
 152.base=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_
 101.set=ANDROID_RESOURCE
 96.set=ANDROID_RESOURCE
@@ -351,7 +351,7 @@
 150.set=ANDROID_RESOURCE
 197.set=ANDROID_RESOURCE
 230.base=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_
-5.file=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_/res/drawable-xxhdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png
+5.file=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_/res/color/abc_tint_seek_thumb.xml
 153.base=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_
 180.base=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_
 111.set=ANDROID_RESOURCE
@@ -513,7 +513,7 @@ count=233
 94.base=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_
 169.base=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_
 166.set=ANDROID_RESOURCE
-148.file=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_/res/drawable/abc_edit_text_material.xml
+148.file=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_/res/color-v23/abc_tint_seek_thumb.xml
 221.base=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_
 144.base=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_
 200.file=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_/res/layout/abc_screen_content_include.xml
@@ -573,7 +573,7 @@ count=233
 118.base=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_
 95.base=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_
 70.base=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_
-149.file=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_/res/color-v23/abc_tint_seek_thumb.xml
+149.file=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_/res/drawable/abc_edit_text_material.xml
 222.base=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_
 145.base=/home/caitlinchou/AndroidStudioProjects/AudioRecorder/app/build/intermediates/res/resources-debug.ap_
 170.set=ANDROID_RESOURCE
