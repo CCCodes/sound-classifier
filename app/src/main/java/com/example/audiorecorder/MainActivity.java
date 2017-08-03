@@ -248,6 +248,23 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
                             }
                         }
                         // write to file here
+                        try {
+                            OutputStream outputStream1 = new FileOutputStream(mFileNameBase+"/raw_mfccs.txt");
+                            OutputStreamWriter outputStreamWriter1 = new OutputStreamWriter(outputStream1);
+
+                            StringBuilder mfcc_sb = new StringBuilder();
+                            for (float[] mfcc_set : mfccs_by_num) {
+                                List<Float> mfcc_set_list = new ArrayList<>();
+                                for (float mfcc_instance :mfcc_set) {
+                                    mfcc_set_list.add(mfcc_instance);
+                                }
+                                mfcc_sb.append(TextUtils.join(",", mfcc_set_list)).append("\n");
+                            }
+                            outputStreamWriter1.write(mfcc_sb.toString());
+                            outputStreamWriter1.close();
+                        } catch (IOException e) {
+                            Log.e("Exception", "MFCC File write failed: " + e.toString());
+                        }
                         for (int i = 0; i < 12; i++) {
                             mfcc_stats[i] = new MFCCData(mfccs_by_num[i]);
                         }
@@ -296,7 +313,7 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
             if ( inputStream != null ) {
                 InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
                 BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-                String receiveString = "";
+                String receiveString;
                 StringBuilder stringBuilder = new StringBuilder();
 
                 while ( (receiveString = bufferedReader.readLine()) != null ) {
@@ -595,8 +612,10 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
                 String[] results = resultData.getStringArray("result");
 
                 /* Update ListView with result */
-                arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, results);
-                mListView.setAdapter(arrayAdapter);
+                if (results != null) {
+                    arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, results);
+                    mListView.setAdapter(arrayAdapter);
+                }
 
                 break;
             case StreamService.STATUS_ERROR:
@@ -702,7 +721,7 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
                 0));
         mListView = new ListView(this);
         try {
-            mListView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, new String[]{"Result 1", "Result 2", "Result 3"}));
+            mListView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, new String[]{"Result 1", "Result 2", "Result 3"}));
         } catch (Exception e) {
             Log.d(TAG, "Printed stack trace");
             e.printStackTrace();
