@@ -5,12 +5,14 @@
     <string name="playStop">Stop playing</string>
     <string name="saveAs">Save As</string>
     <string name="pitch">Pitch: %f</string>
+    <string name="mfccAllText">MFCC All</string>
     <string name="mfccText">MFCC</string>
     <string name="dialog_message">%s not found in app cache folder</string>
     <string name="dialog_title">No File Found</string>
+    <string name="deleteText">Delete</string>
     <string name="streamText">Start Service</string>
     <string name="results">Results will appear here</string>
-    <string name="statusRunning">running...</string>
+    <string name="statusRunning">running&#8230;</string>
     <string name="finished">received results!</string>
     <string name="addFile">Add</string>
     <string name="emptyEntry">Blank Field</string>

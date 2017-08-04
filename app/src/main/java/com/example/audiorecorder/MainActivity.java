@@ -72,12 +72,17 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
     private MediaPlayer   mPlayer = null;
 
     private MFCCButton mMFCCButton = null;
+
+    private TextField mTextField = null;
+    private DeleteButton mDeleteButton = null;
+    private SelectMFCCButton mSelectMFCCButton = null;
+
     private AppCompatEditText mNewFileField = null;
     private NewFileButton mNewFileButton = null;
 
-    private TextField mTextField = null;
-    private StreamButton mStreamButton = null;
     private RecordTimeField mRecordTimeField = null;
+    private StreamButton mStreamButton = null;
+
     private TextView mResultsView = null;
     private ListView mListView = null;
     private ArrayAdapter<String> arrayAdapter = null;
@@ -85,6 +90,8 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
 
     private List<float[]> all_mfccs = new ArrayList<>();
     private MFCCData[] mfcc_stats = new MFCCData[12];
+
+    private List<float[]> all_mfccs_select = new ArrayList<>();
 
     private OutputStream outputStream = null;
     private OutputStreamWriter outputStreamWriter = null;
@@ -125,7 +132,7 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
 
         mPlayer = new MediaPlayer();
 
-        String mFileName = mFileNameBase + "default.mp4";
+        String mFileName = mFileNameBase + "/" + "default.mp4";
         if (! mTextField.getSelectedItem().toString().equals("")) {
             mFileName = mFileNameBase + "/" + mTextField.getSelectedItem().toString() + ".mp4";
         }
@@ -151,7 +158,7 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
 
     private void startRecording() {
 
-        String mFileName = mFileNameBase + "default.mp4";
+        String mFileName = mFileNameBase + "/" + "default.mp4";
         if (! mTextField.getSelectedItem().toString().equals("")) {
             mFileName = mFileNameBase + "/" + mTextField.getSelectedItem() + ".mp4";
         }
@@ -237,6 +244,7 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
                     e.printStackTrace();
                 }
 
+                System.out.println("Current file: " + f);
                 dispatcher.addAudioProcessor(new AudioProcessor() {
 
                     @Override
@@ -247,13 +255,14 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
                                 mfccs_by_num[j][i] = all_mfccs.get(i)[j];
                             }
                         }
-                        // write to file here
+                        // write to file here - will happen for however many files there are in the
+                        // subdirectories of bark (in cache)
                         try {
-                            OutputStream outputStream1 = new FileOutputStream(mFileNameBase+"/raw_mfccs.txt");
+                            OutputStream outputStream1 = new FileOutputStream(mFileNameBase + "/raw_mfccs.txt");
                             OutputStreamWriter outputStreamWriter1 = new OutputStreamWriter(outputStream1);
 
                             StringBuilder mfcc_sb = new StringBuilder();
-                            for (float[] mfcc_set : mfccs_by_num) {
+                            for (float[] mfcc_set : all_mfccs) {
                                 List<Float> mfcc_set_list = new ArrayList<>();
                                 for (float mfcc_instance :mfcc_set) {
                                     mfcc_set_list.add(mfcc_instance);
@@ -289,7 +298,6 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
                         return true;
                     }
                 });
-                //mfcc.process(new AudioEvent(new TarsosDSPAudioFormat(sampleRate, samplesPerFrame, 1, true, true)));
                 dispatcher.run();
             }
 
@@ -302,6 +310,59 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
         }
 
     }
+
+    private void onSelectMFCC() {
+
+        int sampleRate = 44100;
+        int bufferSize = 1024;
+        int bufferOverlap = 512;
+
+        String f = mFileNameBase + "/" + mTextField.getSelectedItem().toString() + ".mp4";
+        InputStream inStream;
+
+        try {
+            inStream = new FileInputStream(f);
+        } catch (java.io.IOException e) {
+            Log.e("Exception", "Could not read input file: " + f);
+            return;
+        }
+        AudioDispatcher dispatcher = new AudioDispatcher(new UniversalAudioInputStream(inStream,
+                new TarsosDSPAudioFormat(sampleRate, 16, 1, true, true)), bufferSize, bufferOverlap);
+        final MFCC mfcc = new MFCC(bufferSize, sampleRate, 13, 40, 300, 3000);
+        dispatcher.addAudioProcessor(mfcc);
+        dispatcher.addAudioProcessor(new AudioProcessor() {
+            @Override
+            public boolean process(AudioEvent audioEvent) {
+                all_mfccs_select.add(Arrays.copyOfRange(mfcc.getMFCC(), 1, 13));
+                return true;
+            }
+
+            @Override
+            public void processingFinished() {
+                // write to file here - will happen for however many files there are in the
+                // subdirectories of bark (in cache)
+                try {
+                    OutputStream outputStream1 = new FileOutputStream(mFileNameBase + "/mfccs_select.txt");
+                    OutputStreamWriter outputStreamWriter1 = new OutputStreamWriter(outputStream1);
+
+                    StringBuilder mfcc_sb = new StringBuilder();
+                    for (float[] mfcc_set : all_mfccs_select) {
+                        List<Float> mfcc_set_list = new ArrayList<>();
+                        for (float mfcc_instance :mfcc_set) {
+                            mfcc_set_list.add(mfcc_instance);
+                        }
+                        mfcc_sb.append(TextUtils.join(",", mfcc_set_list)).append("\n");
+                    }
+                    outputStreamWriter1.write(mfcc_sb.toString());
+                    outputStreamWriter1.close();
+                } catch (IOException e) {
+                    Log.e("Exception", "MFCC File write failed: " + e.toString());
+                }
+            }
+        });
+        dispatcher.run();
+    }
+
 
     private String readFromFile(Context context, String path) {
 
@@ -335,18 +396,6 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
         }
 
         return ret;
-    }
-
-    private void writeToFile(String data, Context context, String path, Boolean append) {
-        try {
-            OutputStream outputStream = new FileOutputStream(path);
-            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
-            outputStreamWriter.write(data);
-            outputStreamWriter.close();
-        }
-        catch (IOException e) {
-            Log.e("Exception", "File write failed: " + e.toString());
-        }
     }
 
     private void fileNotFoundMessage(String path) {
@@ -526,6 +575,21 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
 
         public MFCCButton(Context ctx) {
             super(ctx);
+            setText(R.string.mfccAllText);
+            setOnClickListener(clicker);
+        }
+    }
+
+    class SelectMFCCButton extends android.support.v7.widget.AppCompatButton {
+        OnClickListener clicker = new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onSelectMFCC();
+            }
+        };
+
+        public SelectMFCCButton(Context ctx) {
+            super(ctx);
             setText(R.string.mfccText);
             setOnClickListener(clicker);
         }
@@ -557,12 +621,38 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
             File[] files = cacheDir.listFiles();
             for (File file : files) {
                 String nameFull = file.getName();
-                fileStrings.add(nameFull.substring(0, nameFull.length() - 4));
+                if (nameFull.endsWith(".mp4")) {
+                    fileStrings.add(nameFull.substring(0, nameFull.length() - 4));
+                }
             }
 
             adapter = new ArrayAdapter<>
                     (ctx,android.R.layout.select_dialog_item, fileStrings);
             this.setAdapter(adapter);
+        }
+    }
+
+    class DeleteButton extends android.support.v7.widget.AppCompatButton {
+
+        OnClickListener clicker = new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String selectedFile = mFileNameBase + "/" + mTextField.getSelectedItem().toString() + ".mp4";
+                File fdelete = new File(selectedFile);
+                if (fdelete.exists()) {
+                    if (fdelete.delete()) {
+                        System.out.println("File deleted: " + selectedFile);
+                    } else {
+                        System.out.println("File NOT deleted: " + selectedFile);
+                    }
+                }
+            }
+        };
+
+        public DeleteButton(Context ctx) {
+            super(ctx);
+            setText(R.string.deleteText);
+            setOnClickListener(clicker);
         }
     }
 
@@ -665,10 +755,30 @@ public class MainActivity extends AppCompatActivity implements ResponseReceiver.
                         ViewGroup.LayoutParams.WRAP_CONTENT,
                         0));
 
+        LinearLayout chooseAndDelete = new LinearLayout(this);
+
         mTextField = new TextField(this);
-        ll.addView(mTextField,
-                new LinearLayout.LayoutParams(
+        chooseAndDelete.addView(mTextField,
+                new LinearLayoutCompat.LayoutParams(
                         600,
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        0));
+        mDeleteButton = new DeleteButton(this);
+        chooseAndDelete.addView(mDeleteButton,
+                new LinearLayoutCompat.LayoutParams(
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        0));
+        mSelectMFCCButton = new SelectMFCCButton(this);
+        chooseAndDelete.addView(mSelectMFCCButton,
+                new LinearLayoutCompat.LayoutParams(
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        0));
+        chooseAndDelete.setOrientation(LinearLayout.HORIZONTAL);
+        ll.addView(chooseAndDelete,
+                new LinearLayout.LayoutParams(
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
                         ViewGroup.LayoutParams.WRAP_CONTENT,
                         0));
 

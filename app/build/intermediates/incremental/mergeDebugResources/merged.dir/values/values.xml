@@ -441,11 +441,13 @@
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="addFile">Add</string>
     <string name="app_name">Sound Identifier</string>
+    <string name="deleteText">Delete</string>
     <string name="dialog_message">%s not found in app cache folder</string>
     <string name="dialog_title">No File Found</string>
     <string name="emptyEntry">Blank Field</string>
     <string name="enterValue">Please enter a file name.</string>
     <string name="finished">received results!</string>
+    <string name="mfccAllText">MFCC All</string>
     <string name="mfccText">MFCC</string>
     <string name="pitch">Pitch: %f</string>
     <string name="playStart">Start playing</string>
@@ -455,7 +457,7 @@
     <string name="results">Results will appear here</string>
     <string name="saveAs">Save As</string>
     <string name="search_menu_title">Search</string>
-    <string name="statusRunning">running...</string>
+    <string name="statusRunning">running…</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="streamText">Start Service</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
